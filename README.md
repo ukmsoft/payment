@@ -1,4 +1,4 @@
-#Payment
+# Payment
 This is a basic payment application to make and receive payment.
 
 To run the payment application, follow the below steps:-
