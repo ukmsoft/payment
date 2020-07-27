@@ -1,0 +1,31 @@
+<header>
+  <div class="navbar navbar-light bg-light shadow-lg custom-header-top">
+    <h1>I SMART</h1>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-lg custom-header-bottom">
+
+  </div>
+</header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-sm-12">
+      <app-payment (categories)="onCategories($event)"></app-payment>
+    </div>
+    <div class="col-md-8 col-sm-12">
+      <app-transactions [categories]="categories"></app-transactions>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="navbar navbar-dark bg-dark shadow-lg custom-footer">
+    <div class="container-fluid row">
+      <div class="col-md-4">
+        <p class="text-left text-white">Footer</p>
+      </div>
+      <div class="col-md-8">
+        <p class="text-right text-white">This is a part of an assignment: Prohibited to share at any platform or by any
+          means</p>
+      </div>
+    </div>
+  </div>
+</footer>

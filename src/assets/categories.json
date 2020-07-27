@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Medical"
+    },
+    {
+        "id": 2,
+        "name": "Travel"
+    },
+    {
+        "id": 3,
+        "name": "Loans"
+    },
+    {
+        "id": 4,
+        "name": "Utility Bills"
+    },
+    {
+        "id": 5,
+        "name": "Education"
+    },
+    {
+        "id": 6,
+        "name": "Shooping"
+    },
+    {
+        "id": 7,
+        "name": "Misc"
+    }
+]

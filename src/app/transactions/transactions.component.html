@@ -1,0 +1,81 @@
+<div class="card mt-3 mb-3">
+    <div class="card-header bg-dark text-white">
+        View Transactions
+    </div>
+    <div class="card-body">
+        <form class="form-inline" [formGroup]="transactionForm">
+            <div class="row">
+                <div class="form-group col-md-4 col-sm-12">
+                    <label for="inputFrequency" class="col-md-2 col-sm-6 col-form-label mr-2">Frequency</label>
+                    <div class="col-md-2 col-sm-6">
+                        <select class="form-control" formControlName="frequency" id="inputFrequency"
+                            [(ngModel)]="selectedFrequency" (ngModelChange)="onFrequencyChange($event)">
+                            <option *ngFor="let frequency of frequencies" [ngValue]="frequency">{{ frequency.name }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-4 col-sm-12">
+                    <label for="inputMonth" class="col-md-2 col-sm-6 col-form-label mr-2">Month</label>
+                    <div class="col-md-2 col-sm-6">
+                        <input type="month" class="form-control" formControlName="month" id="inputFrequency"
+                            [(ngModel)]="selectedMonth" (ngModelChange)="onMonthChange($event)">
+                    </div>
+                </div>
+                <div class="form-group col-md-4 col-sm-12">
+                    <label for="inputCategory" class="col-md-2 col-sm-6 col-form-label ml-3 mr-2">Category</label>
+                    <div class="col-md-2 col-sm-6">
+                        <select class="form-control" formControlName="category" id="inputCategory"
+                            [(ngModel)]="selectedCategory" (ngModelChange)="onCategoryChange($event)">
+                            <option *ngFor="let category of newCategories" [ngValue]="category">{{ category.name }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-7">
+        <div class="card mt-3 mb-3">
+            <div class="card-header bg-dark text-white">
+                Expenditure
+            </div>
+            <div class="card-body">
+                <div class="card-custom table-responsive-sm">
+                    <table class="table table-sm table-bordered">
+                        <thead>
+                            <tr class="table-active">
+                                <th scope="col">TxnId</th>
+                                <th scope="col">Desc</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">D/C</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let transaction of transactions">
+                                <th scope="row">{{transaction.transactionId}}</th>
+                                <td>{{transaction.description}}</td>
+                                <td>{{transaction.category.name}}</td>
+                                <td>{{transaction.amount}}</td>
+                                <td>{{transaction.payment.name}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="card mt-3 mb-3">
+            <div class="card-header bg-dark text-white">
+                Spend Analysis
+            </div>
+            <div class="card-body mx-auto">
+                <svg class="spend-analysis"></svg>
+            </div>
+        </div>
+    </div>
+</div>

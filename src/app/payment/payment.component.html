@@ -1,0 +1,45 @@
+<div class="card mt-3 mb-3">
+    <div class="card-header bg-dark text-white">
+        Make / Receive Payments
+    </div>
+    <div class="card-body">
+        <div class="text-center"><h5>Available Balance: &#8377; {{availableBalance}}</h5></div>
+        <form [formGroup]="paymentForm">
+            <div class="form-group row">
+                <label for="inputAmount" class="col-sm-4 col-form-label">Amount</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" formControlName="amount" id="inputAmount">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputDate" class="col-sm-4 col-form-label">Date</label>
+                <div class="col-sm-8">
+                    <input type="date" class="form-control" formControlName="date" id="inputDate">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPaymentType" class="col-sm-4 col-form-label">Payment Type</label>
+                <div class="col-sm-8">
+                    <select class="form-control" formControlName="payment" id="inputPaymentType">
+                        <option *ngFor="let payment of paymentTypes" [ngValue]="payment">{{ payment.name }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputCategory" class="col-sm-4 col-form-label">Category</label>
+                <div class="col-sm-8">
+                    <select class="form-control" formControlName="category" id="inputCategory">
+                        <option *ngFor="let category of allCategories" [ngValue]="category">{{ category.name }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputDescription" class="col-sm-4 col-form-label">Description</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" formControlName="description" id="inputDescription">
+                </div>
+            </div>
+            <button type="button" class="btn btn-outline-secondary" [disabled]="!paymentForm.valid" (click)="onPayment()">Submit</button>
+        </form>
+    </div>
+</div>
